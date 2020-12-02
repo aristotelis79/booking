@@ -24,6 +24,6 @@ defmodule Rsvp.EventQueries do
   end
 
   def create(event) do
-    Repo.insert!(event)
+    Repo.insert(event)
   end
 end
