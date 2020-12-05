@@ -1,3 +1,14 @@
 <h1><em><%=@event.title%></em><small>&nbsp;&nbsp;<%= @event.location %></small></h1>
 <h3><%= format_date(@event.date) %></h3>
 <p><%= @event.description %></p>
+<h4>Availble Spots: <span class="quantity"><%= @event.quantity_available %></span></h4>
+
+<%= form_for @conn, Routes.event_path(@conn, :reserve, @event.id), [as: :reservation, class: "form-inline"], fn f -> %>
+  <div class="form-group">
+    <%= label f, :quantity, "Quantity" %>
+    <%= number_input f, :quantity, class: "form-control", min: 1 %>
+  </div>
+  <%= submit "Reserve", class: "btn btn-promary pull-right" %>
+<% end %>
+
+<span id="id" data-id="<%= @event.id %>"> </span>

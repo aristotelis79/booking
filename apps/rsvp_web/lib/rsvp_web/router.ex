@@ -9,10 +9,10 @@ defmodule RsvpWeb.Router do
     plug :put_secure_browser_headers
   end
 
-#  pipeline :authorized do
-#    plug :browser
-#    plug RsvpWeb.AuthorizedPlug
-#  end
+  #  pipeline :authorized do
+  #    plug :browser
+  #    plug RsvpWeb.AuthorizedPlug
+  #  end
 
   pipeline :api do
     plug :accepts, ["json"]
@@ -26,6 +26,7 @@ defmodule RsvpWeb.Router do
     get "/events/new", EventController, :create
     post "/events/new", EventController, :add
     get "/events/:id", EventController, :show
+    post "/events/:id/reserve", EventController, :reserve
 
     get "/login", LoginController, :index
     post "/login", LoginController, :login
