@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "mix_task",
+      "name": "mix phx.server",
+      "task": "phx.server",
+      "taskArgs": [],
+      "request": "launch",
+      "projectDir": "${workspaceRoot}",
+      "env": {
+        "CLIENT_ID": "12345",
+        "CLIENT_SECRET": "54321"
+      },
+    //   "excludeModules": ["Argon2.Base"],
+    //  "preLaunchTask": "deps.compile"
+    },
+    {
+      "type": "mix_task",
+      "name": "mix test",
+      "request": "launch",
+      "task": "test",
+      "taskArgs": ["--trace"],
+    //   "excludeModules": ["Argon2.Base"],
+      "startApps": true,
+      "projectDir": "${workspaceRoot}",
+      "requireFiles": ["test/**/test_helper.exs", "test/**/*_test.exs"]
+    }
+  ]
+}

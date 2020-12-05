@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [{
+      "label": "test",
+      "type": "shell",
+      "command": "mix test",
+      "group": "test"
+    },
+    {
+      "label": "deps.compile",
+      "type": "shell",
+      "command": "mix deps.get && mix deps.compile",
+      "group": "build"
+    }
+  ]
+}
