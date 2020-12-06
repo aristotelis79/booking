@@ -1,1 +1,1 @@
-# Rsvp.Umbrella
+# Elixir / Phoenix Web app booking
